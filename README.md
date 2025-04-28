@@ -162,7 +162,8 @@ edit this line and add Achievement
 
 Edit The 
 
-```__all__ = (
+```py
+  _all__ = (
     "BallTransform",
     "BallInstanceTransform",
     "SpecialTransform",
@@ -184,4 +185,31 @@ __all__ = (
 ```
 Exact like this 
 
+Then At End line Add This code 
 
+```py
+class AchievementTransformer(TTLModelTransformer[Achievement]):
+    name = "achievement"
+    model = Achievement()
+
+    def key(self, model: Achievement) -> str:
+        return model.name  
+
+    async def load_items(self) -> Iterable[Achievement]:
+        return await Achievement.all()  
+
+    async def transform(
+        self, interaction: discord.Interaction["BallsDexBot"], value: str
+    ) -> Optional[Achievement]:
+        try:
+            achievement = await super().transform(interaction, value)
+            if achievement is None:
+                raise ValueError("This achievement does not exist.")
+            return achievement
+        except ValueError as e:
+            await interaction.response.send_message(str(e), ephemeral=True)
+            return None
+```
+
+> [!IMPORTANT]
+> Do Not Add It Add It After The Definition Add it just after The Final Class Code ends Not At end of line
