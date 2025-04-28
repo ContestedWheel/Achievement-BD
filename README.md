@@ -154,3 +154,5 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
     list_filter = ("unlocked_at",)
     search_fields = ("player__discord_id", "achievement__name")
 ``` 
+
+Step 4: at open your `ballsdex/core/utils/transformer.py`
