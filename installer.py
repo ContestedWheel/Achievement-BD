@@ -1,11 +1,11 @@
 import base64
 import os
+import asyncio
 from datetime import datetime
-
 import requests
 
 PATH = "ballsdex/packages/achievements"
-GITHUB = "Mitoooooooopo/Achievement-BD/achievements"
+GITHUB = "Mitoooooooopo/Achievement-BD/contents/achievements"
 FILES = ["__init__.py", "cog.py"]
 
 os.makedirs(PATH, exist_ok=True)
@@ -46,10 +46,6 @@ async def install_files():
     )
 
     log = []
-
-    if os.path.isfile(f"{PATH}/config.toml"):
-       FILES.pop(FILES.index("config.toml"))
-       await ctx.send("`config.toml` file already found.")
 
     for index, file in enumerate(FILES):
         request = requests.get(f"https://api.github.com/repos/{GITHUB}/{file}")
