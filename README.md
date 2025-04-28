@@ -212,4 +212,10 @@ class AchievementTransformer(TTLModelTransformer[Achievement]):
 ```
 
 > [!IMPORTANT]
-> Do Not Add It Add It After The Definition Add it just after The Final Class Code ends Not At end of line
+> Do Not Add It  After The Definition Add it just after The Final where the final class ends Not At end of line
+
+Then At the End of Line add this 
+
+```py
+AchievementTransform = app_commands.Transform[Achievement, AchievementTransformer]
+```
