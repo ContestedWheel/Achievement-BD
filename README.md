@@ -211,10 +211,24 @@ class AchievementTransformer(TTLModelTransformer[Achievement]):
 ```
 
 > [!IMPORTANT]
-> Do Not Add It  After The Definition Add it just after The Final where the final class ends Not At end of line
+> Be careful where you paste — do NOT just drop at the end of the file. Make sure it's after the last transformer class definition, but before the final end of the file.
 
 Then At the End of Line add this 
 
 ```py
 AchievementTransform = app_commands.Transform[Achievement, AchievementTransformer]
 ```
+Step 6: Migration 
+Create migration file by Running  
+
+```py 
+python3 manage.py makemigrations`
+```
+
+Then just migrate it with 
+
+```py
+Python3 manage.py migrate
+```
+
+Step 7: Installing The Cog 
