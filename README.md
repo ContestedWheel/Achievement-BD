@@ -3,7 +3,7 @@ A Achievement system For Ballsdex
 Tested on Ballsdex 2.24.0 and discord.py 2.4.0
 
 # How to install 
-> [!Pro Tip]
+> [!Tip]
 > Add the codes with Correct indent And In the correct Place! If you have any confusion Then Just directly Contact me on discord or create a issue on this repository
 
 ## Step 1: Adding The Tortoise Model 
