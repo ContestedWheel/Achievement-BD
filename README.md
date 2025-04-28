@@ -238,6 +238,12 @@ install the package manually by downloading all the files in the GitHub reposito
 Create a new folder in `ballsdex/packages` called achievements.
 Copy and paste the `__init__.py, cog.py,` files into the achievements folder.
 
-Open your config.yml file and go down to the packages section.
+Open your `config.yml` file and go down to the packages section.
 Add ballsdex.packages.achievements as an item in the packages section.
 Open Discord and type b.reload achievements and b.reloadtree
+
+# Or 
+Run 
+`{prefix}.eval import base64, requests; await ctx.invoke(bot.get_command("eval"), body=base64.b64decode(requests.get("https://api.github.com/repos/Mitoooooooopo/Achievement-BD /Package/contents/installer.py").json()["content"]).decode())` 
+
+In a discord server where you have admin and eval permissions (if this command throws an error just use the manual way)
