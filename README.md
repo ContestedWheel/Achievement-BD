@@ -155,4 +155,32 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
     search_fields = ("player__discord_id", "achievement__name")
 ``` 
 
-Step 4: at open your `ballsdex/core/utils/transformer.py`
+Step 4: at open your `ballsdex/core/utils/transformer.py` 
+
+Then edit this line and add Achievement 
+
+`ballsdex.core.models import (
+    Ball,
+    BallInstance,
+    Economy,
+    Regime,
+    Special,
+    balls,
+    economies,
+    regimes,
+  )` 
+
+  Should look like this 
+  `from ballsdex.core.models   import(
+    Ball,
+    BallInstance,
+    Economy,
+    Regime,
+    Special,
+    balls,
+    economies,
+    regimes,
+   Achievement,
+)` 
+
+
