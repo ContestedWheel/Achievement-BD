@@ -157,30 +157,31 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
 
 Step 4: at open your `ballsdex/core/utils/transformer.py` 
 
-Then edit this line and add Achievement 
+edit this line and add Achievement 
+`ballsdex.core.models import` and include Achievement, there 
 
-`ballsdex.core.models import (
-    Ball,
-    BallInstance,
-    Economy,
-    Regime,
-    Special,
-    balls,
-    economies,
-    regimes,
-  )` 
+Edit The 
 
-  Should look like this 
-  `from ballsdex.core.models   import(
-    Ball,
-    BallInstance,
-    Economy,
-    Regime,
-    Special,
-    balls,
-    economies,
-    regimes,
-   Achievement,
-)` 
+```__all__ = (
+    "BallTransform",
+    "BallInstanceTransform",
+    "SpecialTransform",
+    "RegimeTransform",
+    "EconomyTransform",
+)
+ ```
+To include AchievementTransform 
+
+```py
+__all__ = (
+    "BallTransform",
+    "BallInstanceTransform",
+    "SpecialTransform",
+    "RegimeTransform",
+    "EconomyTransform",
+    "AchievementTransform",
+)
+```
+Exact like this 
 
 
