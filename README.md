@@ -231,4 +231,11 @@ Then just migrate it with
 Python3 manage.py migrate
 ```
 
-Step 7: Installing The Cog 
+Step 7: Adding the packages 
+
+You can install the package manually by downloading all the files in the GitHub repositories achievements folder.
+Create a new folder in ballsdex/packages called achievements.
+Copy and paste the __init__.py, cog.py,files into the achievements folder.
+Open your config.yml file and go down to the packages section.
+Add ballsdex.packages.achievements as an item in the packages section.
+Open Discord and type b.reload achievements and b.reloadtree
