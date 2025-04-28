@@ -75,4 +75,52 @@ class AchievementRequiredBall(models.Model):
     def __str__(self) -> str:
         return str(self.pk)
  ```
-Step 2: Open Your `admin_panel/bd_models/models.py
+Step 2: Open Your `admin_panel/bd_models/models.py`
+
+At End of line paste This Code 
+
+```py
+class Achievement(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    achievement_emoji_id = models.BigIntegerField(
+        null=True,
+        blank=True,
+        help_text="Discord emoji ID for achievement"
+    )
+    description = models.TextField()
+    required_balls = models.ManyToManyField(
+        Ball,
+        related_name="achievements",
+        help_text="Which countryballs you need to collect"
+    )
+
+    class Meta:
+        managed = False
+        db_table = "achievements"
+
+    def __str__(self):
+        return self.name
+
+
+class PlayerAchievement(models.Model):
+    player = models.ForeignKey(
+        Player,
+        on_delete=models.CASCADE,
+        related_name="player_achievements"
+    )
+    achievement = models.ForeignKey(
+        Achievement,
+        on_delete=models.CASCADE,
+        related_name="player_achievements"
+    )
+    unlocked_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        managed = False
+        unique_together = ("player", "achievement")
+        verbose_name = "Player Achievement"
+        verbose_name_plural = "Player Achievements"
+
+    def __str__(self):
+        return f"{self.player} → {self.achievement}"
+```
