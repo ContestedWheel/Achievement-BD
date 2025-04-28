@@ -3,11 +3,13 @@ A Achievement system For Ballsdex
 Tested on Ballsdex 2.24.0 and discord.py 2.4.0
 
 # How to install 
+> [!Pro Tip]
+> Add the codes with Correct indent And In the correct Place! If you have any confusion Then Just directly Contact me on discord or create a issue on this repository
 
 ## Step 1: Adding The Tortoise Model 
 
 Open `ballsdex/core/models.py`
-And paste this code 
+And paste this code There
 
 ```py
 class Achievement(models.Model):
@@ -80,7 +82,7 @@ class AchievementRequiredBall(models.Model):
 ## Step 2: Adding the Django Model 
 
 open your `admin_panel/bd_models/models.py`
-At End of line paste This Code 
+paste This Code 
 
 ```py
 class Achievement(models.Model):
