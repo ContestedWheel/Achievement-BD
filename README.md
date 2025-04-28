@@ -3,8 +3,9 @@ A Achievement system For Ballsdex Bot
 
 # How to install 
 
-Step 1:Open Your `ballsdex/core/models.py`
+## Step 1: Adding The Tortoise Model 
 
+Open `ballsdex/core/models.py`
 And paste this code 
 
 ```py
@@ -75,8 +76,9 @@ class AchievementRequiredBall(models.Model):
     def __str__(self) -> str:
         return str(self.pk)
  ```
-Step 2: Open Your `admin_panel/bd_models/models.py`
+## Step 2: Adding the Django Model 
 
+open your `admin_panel/bd_models/models.py`
 At End of line paste This Code 
 
 ```py
@@ -124,8 +126,10 @@ class PlayerAchievement(models.Model):
     def __str__(self):
         return f"{self.player} → {self.achievement}"
 ```
-Step 3: At `admin_panel/bd_models/admin`
- create a file named achievement.py Then Paste the Following Code 
+## Step 3: creating a admin file for the panel 
+
+At your `admin_panel/bd_models/admin`
+Folder create a file named achievement.py Then Paste the Following Code 
 
 ```py
 from typing import TYPE_CHECKING, Any  
@@ -154,10 +158,11 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
     search_fields = ("player__discord_id", "achievement__name")
 ``` 
 
-Step 4: at open your `ballsdex/core/utils/transformer.py` 
+## Step 4 adding the Transformers
 
+Open `ballsdex/core/utils/transformer.py` 
 edit this line  
-`ballsdex.core.models import` and include Achievement, there 
+`ballsdex.core.models import` to include Achievement, there 
 
 Then Edit The 
 
@@ -182,7 +187,7 @@ __all__ = (
     "AchievementTransform",
 )
 ```
-Exact like this 
+ like this 
 
 Then paste this code 
 
@@ -218,7 +223,7 @@ Then At the End of Line add this
 ```py
 AchievementTransform = app_commands.Transform[Achievement, AchievementTransformer]
 ```
-Step 6: Migration 
+## Step 6: Migration 
 Create migration file by Running  
 
 ```py 
@@ -231,7 +236,7 @@ Then just migrate it with
 Python3 manage.py migrate
 ```
 
-Step 7: Adding the packages 
+## Step 7: Adding the packages 
 
 install the package manually by downloading all the files in the GitHub repositories achievements folder.
 
