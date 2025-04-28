@@ -124,9 +124,8 @@ class PlayerAchievement(models.Model):
     def __str__(self):
         return f"{self.player} → {self.achievement}"
 ```
-Step 3: go to `admin_panel/bd_models/admin`
-
-There create a file named achievement.py Then Paste the Following Code 
+Step 3: At `admin_panel/bd_models/admin`
+ create a file named achievement.py Then Paste the Following Code 
 
 ```py
 from typing import TYPE_CHECKING, Any  
@@ -157,10 +156,10 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
 
 Step 4: at open your `ballsdex/core/utils/transformer.py` 
 
-edit this line and add Achievement 
+edit this line  
 `ballsdex.core.models import` and include Achievement, there 
 
-Edit The 
+Then Edit The 
 
 ```py
   __all__ = (
@@ -185,7 +184,7 @@ __all__ = (
 ```
 Exact like this 
 
-Then At End line Add This code 
+Then paste this code 
 
 ```py
 class AchievementTransformer(TTLModelTransformer[Achievement]):
