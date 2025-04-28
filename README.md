@@ -100,7 +100,6 @@ class Achievement(models.Model):
     )
 
     class Meta:
-        managed = False
         db_table = "achievements"
 
     def __str__(self):
@@ -121,7 +120,6 @@ class PlayerAchievement(models.Model):
     unlocked_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        managed = False
         unique_together = ("player", "achievement")
         verbose_name = "Player Achievement"
         verbose_name_plural = "Player Achievements"
