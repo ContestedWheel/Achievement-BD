@@ -75,4 +75,4 @@ class AchievementRequiredBall(models.Model):
     def __str__(self) -> str:
         return str(self.pk)
  ```
-
+Step 2: Open Your `admin_panel/bd_models/models.py
