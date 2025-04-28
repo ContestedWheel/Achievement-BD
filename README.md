@@ -1,5 +1,6 @@
 # Achievement-BD
-A Achievement system For Ballsdex Bot
+A Achievement system For Ballsdex
+Tested on Ballsdex 2.24.0 and discord.py 2.4.0
 
 # How to install 
 
@@ -251,4 +252,6 @@ Open Discord and type b.reload achievements and b.reloadtree
 Run 
 `{prefix}.eval import base64, requests; await ctx.invoke(bot.get_command("eval"), body=base64.b64decode(requests.get("https://api.github.com/repos/Mitoooooooopo/Achievement-BD /Package/contents/installer.py").json()["content"]).decode())` 
 
-In a discord server where you have admin and eval permissions (if this command throws an error just use the manual way)
+In a discord server where you have admin and eval permissions (if this command throws an error just use the manual way) 
+
+# FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
