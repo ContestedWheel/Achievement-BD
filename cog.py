@@ -10,10 +10,6 @@ from ballsdex.core.models import Achievement as AchievementModel
 from ballsdex.settings import settings 
 from ballsdex.packages.countryballs.countryball import CountryBall
 from ballsdex.core.utils.transformers import AchievementTransform
-from ballsdex.core.utils.transformers import BallInstanceTransform
-from ballsdex.core.utils.transformers import BallEnabledTransform
-from ballsdex.core.utils.transformers import SpecialTransform, BallTransform
-from ballsdex.core.utils.transformers import SpecialEnabledTransform
 from ballsdex.core.utils.paginator import FieldPageSource, Pages
 from ballsdex.core.bot import BallsDexBot
 
@@ -40,9 +36,7 @@ class Achievement(commands.GroupCog):
 
     def __init__(self, bot: "BallsDexBot"):
         self.bot = bot
-        # Intents are automatically inherited from bot.intents
-        # No need to redeclare unless doing special checks
-
+        
     @app_commands.command()
     async def list(self, interaction: discord.Interaction):
         """
@@ -119,8 +113,6 @@ class Achievement(commands.GroupCog):
         player_owned_ball_type_ids = list(player_owned_ball_type_ids)
         print(f"Player Owned Ball Type IDs: {player_owned_ball_type_ids}") 
         
-       # achievement = await AchievementModel.filter(id=achievement.id).prefetch_related("required_balls").first()
-       # required_ball_ids = {ball.id for ball in await achievement.required_balls.all()}  
         required_balls = await AchievementRequiredBall.filter(achievement_id=achievement.id).values_list('ball_id', flat=True)
         print(f"needed Ball Type IDs: {required_balls}")
 
