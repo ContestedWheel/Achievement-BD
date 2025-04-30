@@ -45,7 +45,11 @@ Line to include achievement like this
 At your `BallsDex-DiscordBot/admin_panel` folder create a folder named `achievement` 
 then copy past the files inside the achievement folder in to that achievement folder you made otherwise copy the entire achievement folder from here and past it at your BallsDex-DiscordBot/admin_panel/ 
 
-And at 
+Now at 
+`admin_panel/admin_panel/settings/local.py`
+add this line `INSTALLED_APPS.append("achievement")`
+
+Then at 
 `BallsDex-DiscordBot/admin_panel`  
 Run 
 ```py
