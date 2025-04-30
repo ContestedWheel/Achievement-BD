@@ -47,8 +47,11 @@ then copy past the files inside the achievement folder in to that achievement fo
 
 Now open your 
 `admin_panel/admin_panel/settings/local.py` there 
-add this line `INSTALLED_APPS.append("achievement)`
+add this line 
 
+```py
+INSTALLED_APPS.append("achievement")
+```
 Then at 
 `BallsDex-DiscordBot/admin_panel`  
 Run 
