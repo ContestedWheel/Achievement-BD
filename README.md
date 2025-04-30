@@ -33,7 +33,7 @@ Line to include achievement like this
     "connections": {"default": os.environ.get("BALLSDEXBOT_DB_URL")},
     "apps": {
       "models": {
-        "models": ["ballsdex.core.models", "balldex.packages.achievements.models", aerich.models"],
+        "models": ["ballsdex.core.models", "balldex.packages.achievements.models", "aerich.models"],
         "default_connection": "default",
       },
     },
