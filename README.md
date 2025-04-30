@@ -4,7 +4,6 @@ Tested on Ballsdex 2.24.0 and discord.py 2.4.0
 
 # How to install 
 
-
 ## Step 1 install the package manually by downloading all the files in the GitHub repositories achievements folder.
 
 Create a new folder in `ballsdex/packages` called achievements.
@@ -46,13 +45,13 @@ Line to include achievement like this
 At your `BallsDex-DiscordBot/admin_panel` folder create a folder named `achievement` 
 then copy past the files inside the achievement folder in to that achievement folder you made otherwise copy the entire achievement folder from here and past it at your BallsDex-DiscordBot/admin_panel/ 
 
-And then Run 
+And at 
+`BallsDex-DiscordBot/admin_panel`  
+Run 
 ```py
 python3 manage.py migrate achievement
 ```
-in 
-`BallsDex-DiscordBot/admin_panel` 
 
-Run the bot You should now see achievement list and claim commands 
+Now start the bot You should now see achievement list and claim commands 
 
 # FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
