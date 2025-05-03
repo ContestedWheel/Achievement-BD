@@ -59,6 +59,6 @@ add this line
 INSTALLED_APPS.append("achievement")
 ```
 
-Now start the bot You should now see achievement list and claim commands 
+Now start the bot and do start the admin panel `docker compose up -d admin-panel` You should now see achievement panel on the admin panel and list and claim commands 
 
 # FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
