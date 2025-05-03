@@ -39,10 +39,8 @@ class Achievement(commands.GroupCog):
     """
 
     def __init__(self, bot: "BallsDexBot"):
-        self.bot = bot
-        # Intents are automatically inherited from bot.intents
-        # No need to redeclare unless doing special checks
-
+        self.bot = bot 
+     
     @app_commands.command()
     async def list(self, interaction: discord.Interaction):
         """
