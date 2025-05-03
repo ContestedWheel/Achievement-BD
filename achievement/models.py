@@ -23,6 +23,12 @@ class Achievement(models.Model):
         Ball,
         related_name="achievements",
         help_text="Which countryballs you need to collect"
+    ) 
+    special_required = models.ManyToManyField(
+        Special,
+        blank=True,
+        related_name="special_achievement",
+        help_text="Any specials"
     )
     enable = models.BooleanField(
             help_text="on or off the achievements", default=True
