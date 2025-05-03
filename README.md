@@ -1,6 +1,12 @@
 # Achievement-BD
 A Achievement system For Ballsdex
-Tested on Ballsdex 2.24.0 and discord.py 2.4.0
+Tested on Ballsdex 2.24.0 and discord.py 2.4.0 
+
+>[!IMPORTANT]
+>if any Error occured while running this please Contact me Directly on discord Username Noobdog667 
+
+
+
 
 # How to install 
 
