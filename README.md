@@ -58,12 +58,6 @@ add this line
 ```py
 INSTALLED_APPS.append("achievement")
 ```
-Then at 
-`BallsDex-DiscordBot/admin_panel`  
-Run 
-```py
-python3 manage.py migrate achievement
-```
 
 Now start the bot You should now see achievement list and claim commands 
 
