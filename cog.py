@@ -10,10 +10,6 @@ from .models import Achievement as AchievementModel
 from ballsdex.settings import settings 
 from ballsdex.packages.countryballs.countryball import CountryBall
 from .transformers import AchievementTransform, AchievementEnabledTransform
-from ballsdex.core.utils.transformers import BallInstanceTransform
-from ballsdex.core.utils.transformers import BallEnabledTransform
-from ballsdex.core.utils.transformers import SpecialTransform, BallTransform
-from ballsdex.core.utils.transformers import SpecialEnabledTransform
 from ballsdex.core.utils.paginator import FieldPageSource, Pages
 from ballsdex.core.bot import BallsDexBot
 
@@ -40,10 +36,8 @@ class Achievement(commands.GroupCog):
     """
 
     def __init__(self, bot: "BallsDexBot"):
-        self.bot = bot
-        # Intents are automatically inherited from bot.intents
-        # No need to redeclare unless doing special checks
-
+        self.bot = bot    
+     
     @app_commands.command()
     async def list(self, interaction: discord.Interaction):
         """
