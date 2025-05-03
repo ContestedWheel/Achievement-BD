@@ -9,7 +9,7 @@ class AchievementAdmin(admin.ModelAdmin):
     list_display = ("name", "description", "achievement_emoji_id", "enable")
     list_editable = ("enable",)
     search_fields = ("name",)
-    autocomplete_fields  = ("required_balls",) 
+    autocomplete_fields  = ("required_balls", "special_required") 
     
     @admin.display(description="Emojis")
     def achievement_emoji(self, obj: Achievement):
