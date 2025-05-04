@@ -1,6 +1,6 @@
 # Achievement-BD
 A Achievement system For Ballsdex
-Tested on Ballsdex 2.24.0 and discord.py 2.4.0 
+Tested on Ballsdex 2.24.0 and discord.py 2.4.0 and Ballsdex 2.27.0 with discord py 2.5.0
 
 >[!IMPORTANT]
 >if any Error occured while running this please Contact me Directly on discord Username Noobdog667 
@@ -58,7 +58,10 @@ add this line
 ```py
 INSTALLED_APPS.append("achievement")
 ```
-
+Then migrate 
+```py
+python3 manage.py migrate achievement
+```
 Now start the bot and do start the admin panel `docker compose up -d admin-panel` You should now see achievement panel on the admin panel and list and claim commands 
 
 # FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
