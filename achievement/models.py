@@ -8,7 +8,7 @@ from django.core.cache import cache
 from django.db import models
 from django.utils.safestring import SafeText, mark_safe
 from django.utils.timezone import now
-from bd_models.models import Ball, Player 
+from bd_models.models import Ball, Player, Special
 from ballsdex.settings import settings 
 
 class Achievement(models.Model):
