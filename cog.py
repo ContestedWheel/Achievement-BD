@@ -8,7 +8,6 @@ from .models import AchievementRequiredBall, AchievementRequiredSpecial
 from .models import PlayerAchievement
 from .models import Achievement as AchievementModel
 from ballsdex.settings import settings 
-from ballsdex.packages.countryballs.countryball import CountryBall
 from .transformers import AchievementTransform, AchievementEnabledTransform
 from ballsdex.core.utils.paginator import FieldPageSource, Pages
 from ballsdex.core.bot import BallsDexBot
