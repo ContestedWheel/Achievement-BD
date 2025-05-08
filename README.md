@@ -58,10 +58,16 @@ add this line
 ```py
 INSTALLED_APPS.append("achievement")
 ```
-Then migrate 
+Then migrate  
+If you use docker then 
 ```py
-python3 manage.py migrate achievement
+docker compose exec admin-panel python3 manage.py migrate achievement
 ```
-Now start the bot and do start the admin panel `docker compose up -d admin-panel` You should now see achievement panel on the admin panel and list and claim commands 
+
+If use poetry then 
+```py
+poetry run python3 manage.py migrate achievement
+```
+Now start the bot` You should now see achievement panel on the admin panel and list and claim commands 
 
 # FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
