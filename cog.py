@@ -110,7 +110,7 @@ class Achievement(commands.GroupCog):
         player, _ = await Player.get_or_create(discord_id=interaction.user.id)  
 
         if await PlayerAchievement.filter(player=player, achievement=achievement).exists():
-            await interaction.response.send_message(
+            await interaction.followup.send(
                 f"You Already claimed the achievement **{achievement.name}**!", ephemeral=True)        
             return
         
