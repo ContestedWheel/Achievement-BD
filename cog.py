@@ -108,6 +108,11 @@ class Achievement(commands.GroupCog):
         await interaction.response.defer(ephemeral=True) 
      
         player, _ = await Player.get_or_create(discord_id=interaction.user.id)  
+
+        if await PlayerAchievement.filter(player=player, achievement=achievement).exists():
+            await interaction.response.send_message(
+                f"You Already claimed the achievement **{achievement.name}**!", ephemeral=True)        
+            return
         
         player_owned_ball_type_ids = await BallInstance.filter(player=player).values_list("ball__id", flat=True)  
 
@@ -156,13 +161,8 @@ class Achievement(commands.GroupCog):
                     f"❌ Missing requirements: {required_ball.country} with {required_special}",
                     ephemeral=True
                 )
-                return
-                                                   
-        if await PlayerAchievement.filter(player=player, achievement=achievement).exists():
-            await interaction.response.send_message(
-                f"You Already claimed the achievement **{achievement.name}**!", ephemeral=True)        
-            return
-            
+                return 
+             
         await PlayerAchievement.create(player=player, achievement=achievement)
         await interaction.followup.send(
             f"🎉Congrats, you claimed **{achievement.name}**!", ephemeral=True) 
