@@ -19,7 +19,7 @@ Open your `config.yml` file and go down to the packages section.
 Add ballsdex.packages.achievements as in the packages section. 
 
 ## Step 2
-open Your `ballsdex/core/__main__.py` 
+open Your `ballsdex/__main__.py` 
 
 Edit The 
 ```py 
