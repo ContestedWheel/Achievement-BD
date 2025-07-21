@@ -42,6 +42,16 @@ class Achievement(models.Model):
     )    
     enable = fields.BooleanField(
         default=True, description="Disabled achievement will never be shown or can be claimed."
+    ) 
+    reward = fields.ManyToManyField(
+        "models.Ball",
+        related_name="reward_achievements",
+        through="achievements_reward",  # match Django
+        forward_key="achievement_id",
+        backward_key="ball_id"
+    )
+    self_catch = fields.BooleanField(
+       default=False, description="weither this achievement need self_catched balls"
     )
 
     class Meta:
