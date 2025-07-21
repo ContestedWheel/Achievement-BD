@@ -46,7 +46,7 @@ class Achievement(models.Model):
     reward = fields.ManyToManyField(
         "models.Ball",
         related_name="reward_achievements",
-        through="achievements_reward",  # match Django
+        through="achievements_reward",  
         forward_key="achievement_id",
         backward_key="ball_id"
     )
