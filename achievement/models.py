@@ -33,7 +33,14 @@ class Achievement(models.Model):
     enable = models.BooleanField(
             help_text="on or off the achievements", default=True
     )
-
+    reward = models.ManyToManyField(
+        Ball,
+        blank=True,
+        help_text="rewards for achievements"
+    )
+    self_catch = models.BooleanField(
+             help_text="weither this achievement need self_catched balls", default=False
+    )
     class Meta:
         db_table = "achievements"
 
