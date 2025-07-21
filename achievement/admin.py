@@ -6,11 +6,11 @@ from .models import Achievement, PlayerAchievement
 
 @admin.register(Achievement)
 class AchievementAdmin(admin.ModelAdmin):
-    list_display = ("name", "description", "achievement_emoji_id", "enable")
-    list_editable = ("enable",)
+    list_display = ("name", "description", "achievement_emoji_id", "enable", "self_catch", "required_quantity")
+    list_editable = ("enable", "self_catch")
     search_fields = ("name",)
-    autocomplete_fields  = ("required_balls", "special_required") 
-    
+    autocomplete_fields  = ("required_balls", "reward", "special_required")
+
     @admin.display(description="Emojis")
     def achievement_emoji(self, obj: Achievement):
         return mark_safe(
@@ -22,5 +22,4 @@ class PlayerAchievementAdmin(admin.ModelAdmin):
     list_display = ("player", "achievement", "unlocked_at")
     list_filter = ("unlocked_at",)
     search_fields = ("player__discord_id", "achievement__name")
-
 
