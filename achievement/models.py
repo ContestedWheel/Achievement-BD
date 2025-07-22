@@ -44,7 +44,8 @@ class Achievement(models.Model):
     ) 
     self_catch = models.BooleanField(
              help_text="weither this achievement need self_catched balls", default=False
-    )
+    ) 
+    
     class Meta:
         db_table = "achievements"
 
