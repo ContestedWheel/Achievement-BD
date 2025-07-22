@@ -49,7 +49,11 @@ class Achievement(models.Model):
         through="achievements_reward",  
         forward_key="achievement_id",
         backward_key="ball_id"
-    )
+    ) 
+    required_quantity = fields.IntField(
+        default=1,
+        description="Number of each required combo (ball + special) needed"
+    ) 
     self_catch = fields.BooleanField(
        default=False, description="weither this achievement need self_catched balls"
     )
