@@ -10,7 +10,7 @@ Tested on Ballsdex 2.24.0 and discord.py 2.4.0 and Ballsdex 2.27.0 with discord 
 
 # How to install 
 
-## Step 1 install the package manually by downloading all the files in the GitHub repositories achievements folder.
+## Step 1 install the package manually by downloading all the files in the GitHub repository.
 
 Create a new folder in `ballsdex/packages` called achievements.
 Copy and paste the `__init__.py, cog.py, models.py and transformers.py` files into the achievements folder.
