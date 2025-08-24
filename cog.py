@@ -65,7 +65,7 @@ class Achievement(commands.GroupCog):
         for achievement in achievement:
             name = f"{achievement.name}"
             description = f"{achievement.description}"
-            emote = self.bot.get_emoji(achievement.achievement_emoji_id)
+            emote = self.bot.get_emoji(achievement.achievement_emoji_id) or ""
 
             if achievement.id in claimed_achievements:
                 status = "✅"
