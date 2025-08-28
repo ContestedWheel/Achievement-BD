@@ -14,7 +14,7 @@ Tested on Ballsdex 2.24.0 and discord.py 2.4.0 and Ballsdex 2.27.0 with discord 
 
 2. Create a new folder in `ballsdex/packages` called achievements.
 
-3. Copy and paste the `__init__.py, cog.py, models.py` and `transformers.py` from the achievements folder into your achievements folder.
+3. Copy and paste the `__init__.py, cog.py, models.py` and `transformers.py` from the package folder into your achievements folder.
 
 It should look like this:
 
