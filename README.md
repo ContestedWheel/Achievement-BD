@@ -1,73 +1,70 @@
 # Achievement-BD
-A Achievement system For Ballsdex
+An achievement system for Ballsdex.
 Tested on Ballsdex 2.24.0 and discord.py 2.4.0 and Ballsdex 2.27.0 with discord py 2.5.0
 
 >[!IMPORTANT]
->if any Error occured while running this please Contact me Directly on discord Username Noobdog667 
+> If any errors occur while running this package, please contact me directly on Discord (username: noobdog667)
 
 
 
 
 # How to install 
 
-## Step 1 install the package manually by downloading all the files in the GitHub repository.
+1. Install the package manually by downloading all the files in the GitHub repository.
 
-Create a new folder in `ballsdex/packages` called achievements.
-Copy and paste the `__init__.py, cog.py, models.py and transformers.py` files into the achievements folder.
+2. Create a new folder in `ballsdex/packages` called achievements.
 
-Open your `config.yml` file and go down to the packages section.
-Add ballsdex.packages.achievements as in the packages section. 
+3. Copy and paste the `__init__.py, cog.py, models.py` and `transformers.py` from the package folder into your achievements folder.
 
-## Step 2
-open Your `ballsdex/__main__.py` 
+It should look like this:
 
-Edit The 
-```py 
-TORTOISE_ORM = {
-    "connections": {"default": os.environ.get("BALLSDEXBOT_DB_URL")},
-    "apps": {
-        "models": {
-            "models": ["ballsdex.core.models"],
-            "default_connection": "default",
-        },
-    },
-}
-```
-Line to include achievement like this 
-  ```py
-  TORTOISE_ORM = {
-    "connections": {"default": os.environ.get("BALLSDEXBOT_DB_URL")},
-    "apps": {
-      "models": {
-        "models": ["ballsdex.core.models", "ballsdex.packages.achievements.models"],
-        "default_connection": "default",
-      },
-    },
-  }
-  ```
+<img width="653" height="161" alt="image" src="https://github.com/user-attachments/assets/39c8fc14-1b0e-4cc9-bacf-eec1f3febe2c" />
 
-# Step 3 
+4. Open your `config.yml` file and scroll down until you see the list of packages. Add `ballsdex.packages.achievements` in that list. It should look like this:
 
-At your `BallsDex-DiscordBot/admin_panel` folder create a folder named `achievement` 
-then copy past the files inside the achievement folder in to that achievement folder you made otherwise copy the entire achievement folder from here and past it at your BallsDex-DiscordBot/admin_panel/ 
+<img width="444" height="227" alt="image" src="https://github.com/user-attachments/assets/eefdacba-44f6-4c6c-a8c9-c92039a1d782" />
 
-Now open your 
-`admin_panel/admin_panel/settings/local.py` there 
-add this line 
+Note that if you have multiple packages, it will look different.
+
+
+5. Open `__main__.py`. located in the `ballsdex` folder.
+
+6. Go to line 33 and add `"ballsdex.packages.achievements.model"`. Make sure to include the quotation marks.
+
+It should look like this after:
+
+<img width="859" height="182" alt="image" src="https://github.com/user-attachments/assets/7cd062fc-6768-44d1-a2f1-99b897e11869" />
+
+7. In your `admin_panel` folder, create a new folder named `achievement`
+
+8. Copy and paste the files from the "achievement" folder (including the migrations folder) into the achievement folder you made.
+
+9. Open the `local.py` file, located in `admin_panel/admin_panel/settings`.  Add this below line 5:
 
 ```py
 INSTALLED_APPS.append("achievement")
 ```
-Then migrate  
-If you use docker then 
+
+It should look like this after:
+
+<img width="466" height="263" alt="image" src="https://github.com/user-attachments/assets/95056964-4bf8-4cde-9cb0-ed5b2e6141fe" />
+
+10. Save the file and close your text editor. Then, go to your terminal and use the migration command.
+ 
+For Docker:
 ```py
 docker compose exec admin-panel python3 manage.py migrate achievement
 ```
 
-If use poetry then 
+For Poetry (Dockerless):
 ```py
 poetry run python3 manage.py migrate achievement
 ```
-Now start the bot` You should now see achievement panel on the admin panel and list and claim commands 
 
-# FEEL FREE To Edit the code Fix mistakes or use anywhere If you get any issues regarding the code contact me in discord Or create a pull Request in this repository
+Verify that no errors happened when you did the command.
+
+Once the bot has started, you should see achievements on the admin panel and the bot commands. 
+
+If you don't see the bot commands, refresh your Discord by pressing CTRL + R. If you are on mobile, close and open your Discord app.
+
+# Feel free to edit the code to fix mistakes or use anywhere. If you get any issues regarding the code, contact me in Discord or create a pull request in this repository.
