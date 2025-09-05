@@ -87,7 +87,7 @@ class Achievement(commands.GroupCog):
         per_page = 10
 
         source = FieldPageSource(entries, per_page=per_page, inline=False, clear_description=False)
-        source.embed.description = f"__**{settings.bot_name} achievementlist**__"
+        source.embed.description = f"__**{settings.bot_name} Achievements list**__"
         source.embed.colour = discord.Colour.blurple()
         source.embed.set_author(
             name=interaction.user.display_name,
@@ -207,3 +207,4 @@ class Achievement(commands.GroupCog):
             f"🎉 Congrats, you claimed **{achievement.name}**!",
             ephemeral=True
         )
+
