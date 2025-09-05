@@ -20,7 +20,8 @@ class Achievement(models.Model):
     )
     description = models.TextField()
     required_balls = models.ManyToManyField(
-        Ball,
+        Ball, 
+        blank=True,
         related_name="achievements",
         help_text="Which countryballs you need to collect"
     ) 
