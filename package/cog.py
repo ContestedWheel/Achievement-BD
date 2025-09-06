@@ -159,7 +159,7 @@ class Achievement(commands.GroupCog):
                     note = " (must be self-caught)" if achievement.self_catch else ""
                     countries = ", ".join(ball.country for ball in missing_balls)
                     await interaction.followup.send(
-                        f"❌ Missing required balls{note}: {countries}",
+                        f"❌ Missing required countryballs{note}: {countries}",
                         ephemeral=True
                     )
                     return
@@ -183,7 +183,7 @@ class Achievement(commands.GroupCog):
                     note = " (must be self-caught)" if achievement.self_catch else ""
                     
                     await interaction.followup.send(
-                        f"❌ Missing required combinations{note}: {', '.join(missing_combinations)} with any of [{special_names}]",
+                        f"❌ Missing required {note}: {', '.join(missing_combinations)} with any of [{special_names}]",
                         ephemeral=True
                     )
                     return
@@ -207,4 +207,5 @@ class Achievement(commands.GroupCog):
             f"🎉 Congrats, you claimed **{achievement.name}**!",
             ephemeral=True
         )
+
 
