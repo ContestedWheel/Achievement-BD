@@ -35,7 +35,7 @@ It should look like this after:
 
 <img width="859" height="182" alt="image" src="https://github.com/user-attachments/assets/7cd062fc-6768-44d1-a2f1-99b897e11869" />
 
-7. In your `admin_panel` folder, create a new folder named `achievement`
+7. In the first `admin_panel` (not the second), create a new folder named `achievement`
 
 8. Copy and paste the files from the "achievement" folder (including the migrations folder) into the achievement folder you made.
 
